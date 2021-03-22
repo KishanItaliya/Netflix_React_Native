@@ -76,16 +76,16 @@ function HomeNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
         name="MovieDetailsScreen"
         component={MovieDetailsScreen}
         options={{
           title: "",
         }}
-      />
-      <HomeStack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
   );
