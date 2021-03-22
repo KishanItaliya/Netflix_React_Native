@@ -6,6 +6,7 @@ import * as React from "react";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import Home from "../screens/HomeScreen";
+import MovieDetailsScreen from "../screens/MovieDetailsScreen";
 import ComingSoon from "../screens/ComingSoon";
 import {
   BottomTabParamList,
@@ -38,7 +39,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="ComingSoon"
-        component={TabTwoNavigator}
+        component={ComingSoon}
         options={{
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="video-library" size={24} color={color} />
@@ -74,6 +75,13 @@ const HomeStack = createStackNavigator<HomeParamList>();
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="MovieDetailsScreen"
+        component={MovieDetailsScreen}
+        options={{
+          title: "",
+        }}
+      />
       <HomeStack.Screen
         name="Home"
         component={Home}
